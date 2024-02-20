@@ -29,9 +29,6 @@ The app includes several SwiftUI views for presenting the user interface:
 - `ResultView`: Shown after saving an event, providing feedback on a successful event save along with the average cost.
 
 
-# Event Building App
-
-This repository contains the source code for the Event Building app. The app allows users to manage and view different event categories.
 
 ## Unit Tests
 
