@@ -1,13 +1,16 @@
-// MARK: - Views
+//
+//  Event Building
+//
+//  Created by elmemy on 19/02/2024.
+//
 
 import SwiftUI
-
 // View for displaying a category item
 struct CategoryItemView: View {
     let category: CategoryModel
 
     var body: some View {
-        NavigationLink(destination: CategoryDetailView(viewModel: EventViewModel(), category: category)) {
+        NavigationLink(destination: CategoryDetailView(viewModel: EventViewModel(eventService: EventService(networking: NetworkService())), category: category)) {
             VStack(alignment: .leading) {
                 AsyncImage(url: category.image)
 

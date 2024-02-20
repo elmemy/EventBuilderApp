@@ -7,8 +7,6 @@
 
 // MARK: - Event Item Model
 
-import Foundation
-
 // Model for representing an event item
 struct EventItem: Identifiable, Decodable, Equatable {
     let id: Int

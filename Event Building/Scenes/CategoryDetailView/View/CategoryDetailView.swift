@@ -5,6 +5,7 @@
 //
 
 // View for displaying details of a specific category
+
 import SwiftUI
 
 struct CategoryDetailView: View {

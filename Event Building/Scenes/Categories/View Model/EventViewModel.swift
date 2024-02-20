@@ -6,27 +6,25 @@
 //
 // EventViewModel.swift
 
-// ViewModel for managing events
 import SwiftUI
 import Combine
 
+// ViewModel for managing events
 class EventViewModel: ObservableObject {
     @Published var categories: [CategoryModel] = []
     @Published var items: [EventItem] = []
     @Published var addedItems: [EventItem] = []
     @Published var averageCost: String = "0.00"
 
-    private let networking: Networking
+    private let eventService: EventService
 
-    // Initialize ViewModel with a default networking layer
-    init(networking: Networking = NetworkLayer()) {
-        self.networking = networking
+    init(eventService: EventService) {
+        self.eventService = eventService
     }
 
-    // Fetch categories asynchronously
     func fetchCategories() async {
         do {
-            let categories: [CategoryModel] = try await networking.fetchData(from: APIConstants.categoriesURL())
+            let categories = try await eventService.fetchCategories()
             DispatchQueue.main.async {
                 self.categories = categories
             }
@@ -35,10 +33,9 @@ class EventViewModel: ObservableObject {
         }
     }
 
-    // Fetch items for a specific category asynchronously
     func fetchItems(for category: CategoryModel) async {
         do {
-            let items: [EventItem] = try await networking.fetchData(from: APIConstants.itemsURL(for: category.id))
+            let items = try await eventService.fetchItems(for: category)
             DispatchQueue.main.async {
                 self.items = items
             }
@@ -47,7 +44,6 @@ class EventViewModel: ObservableObject {
         }
     }
 
-    // Add an item to the list of added items
     func addItem(_ item: EventItem) {
         if !addedItems.contains(where: { $0.id == item.id }) {
             addedItems.append(item)
@@ -56,20 +52,17 @@ class EventViewModel: ObservableObject {
         }
     }
 
-    // Update the status of each item based on whether it's added or not
     func updateItemStatus() {
         for var item in items {
             item.isAdded = addedItems.contains { $0.id == item.id }
         }
     }
 
-    // Update the average cost based on added items
     func updateAverageCost() {
         let (minCost, maxCost, _) = calculateMinMaxAverageCost()
         self.averageCost = "$\(minCost) - \(maxCost)"
     }
 
-    // Calculate minimum, maximum, and average cost based on added items
     private func calculateMinMaxAverageCost() -> (min: String, max: String, average: String) {
         guard !addedItems.isEmpty else {
             return ("0.00", "0.00", "0.00")
@@ -87,7 +80,6 @@ class EventViewModel: ObservableObject {
         }
     }
 
-    // Calculate minimum and maximum cost based on added items
     private func calculateMinMax(addedItems: [EventItem]) -> (min: String, max: String) {
         let minCost = addedItems.min(by: { $0.avgBudget < $1.avgBudget })?.avgBudget ?? 0.0
         let maxCost = addedItems.max(by: { $0.avgBudget < $1.avgBudget })?.avgBudget ?? 0.0

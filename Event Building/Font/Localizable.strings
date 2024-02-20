@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Event Building
+
+  Created by elmemy on 20/02/2024.
+  
+*/
+
+"eventBuilder" = "Event Builder";
+"addToEvent" = "Add to your event to view our cost estimate.";
+"errorFetchingCategories" = "Error fetching categories: %@";
+"errorFetchingItems" = "Error fetching items for %@: %@";

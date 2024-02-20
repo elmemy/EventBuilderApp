@@ -5,7 +5,6 @@
 //  Created by elmemy on 19/02/2024.
 
 // MARK: - Networking
-
 import Foundation
 
 // Enum to represent network-related errors
@@ -19,9 +18,8 @@ protocol Networking {
     func fetchData<T: Decodable>(from url: URL) async throws -> T
 }
 
-// Struct implementing Networking protocol
-struct NetworkLayer: Networking {
-    // Fetch data from a given URL asynchronously
+// Concrete implementation of the Networking protocol
+class NetworkService: Networking {
     func fetchData<T: Decodable>(from url: URL) async throws -> T {
         do {
             let (data, _) = try await URLSession.shared.data(from: url)

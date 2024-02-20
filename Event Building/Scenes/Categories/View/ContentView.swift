@@ -7,8 +7,9 @@
 // View for the main content
 import SwiftUI
 
+// View for the main content
 struct ContentView: View {
-    @StateObject private var viewModel = EventViewModel()
+    @StateObject private var viewModel = EventViewModel(eventService: EventService(networking: NetworkService()))
     let gridItems = [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)]
 
     var body: some View {
@@ -23,8 +24,6 @@ struct ContentView: View {
                 Spacer().frame(height: 39)
 
                 EventCategoriesView(viewModel: viewModel, gridItems: gridItems)
-                
-
             }
             .onAppear {
                 Task {
@@ -65,16 +64,14 @@ struct EventCategoriesView: View {
         ScrollView {
             LazyVGrid(columns: gridItems, spacing: 16) {
                 ForEach(viewModel.categories, id: \.title) { category in
-                    NavigationLink(destination: CategoryDetailView(viewModel: viewModel, category: category)) {
-                        CategoryItemView(category: category)
-                    }
-                    .buttonStyle(PlainButtonStyle())
+                    CategoryItemView(category: category)
                 }
             }
             .padding(16)
         }
     }
 }
+
 
 // View for a custom-styled button
 struct CustomButton: View {
