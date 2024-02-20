@@ -1,0 +1,35 @@
+// MARK: - Views
+
+import SwiftUI
+
+// View for displaying a category item
+struct CategoryItemView: View {
+    let category: CategoryModel
+
+    var body: some View {
+        NavigationLink(destination: CategoryDetailView(viewModel: EventViewModel(), category: category)) {
+            VStack(alignment: .leading) {
+                AsyncImage(url: category.image)
+
+                HStack {
+                    Text(category.title)
+                        .font(.custom("Avenir", size: 14))
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color(#colorLiteral(red: 0.45490196347236633, green: 0.45490196347236633, blue: 0.45490196347236633, alpha: 1)))
+                        .lineLimit(1)
+                        .multilineTextAlignment(.leading)
+                        .padding(8)
+
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(Color(#colorLiteral(red: 0.36470588235294116, green: 0.6392156862745098, blue: 0.6627450980392157, alpha: 1)))
+                        .font(.system(size: 14))
+                        .padding(8)
+                }
+            }
+            .background(Color.white)
+            .cornerRadius(10.0)
+            .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 2)
+        }
+    }
+}
