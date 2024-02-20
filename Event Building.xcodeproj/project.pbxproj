@@ -21,7 +21,6 @@
 		A71CE7E22B835CBB00A05D8D /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71CE7E12B835CBB00A05D8D /* ImageCache.swift */; };
 		A71CE7E72B835DB800A05D8D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71CE7E62B835DB800A05D8D /* NetworkManager.swift */; };
 		A71CE7E92B835DDD00A05D8D /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71CE7E82B835DDD00A05D8D /* APIConstants.swift */; };
-		A71FEAC82B83D72000498216 /* Avenir.otf in Resources */ = {isa = PBXBuildFile; fileRef = A71FEAC72B83D72000498216 /* Avenir.otf */; };
 		A71FEACB2B83DF4600498216 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FEACA2B83DF4600498216 /* ItemView.swift */; };
 		A7F1D2412B83F5C6000F6AD1 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F1D2402B83F5C6000F6AD1 /* ResultView.swift */; };
 		A7FC611D2B83984D000AD9C4 /* Event_BuildingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC611C2B83984D000AD9C4 /* Event_BuildingTests.swift */; };
@@ -47,6 +46,7 @@
 /* Begin PBXFileReference section */
 		A70D73C32B83800500D8E2EB /* CategoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryItemView.swift; sourceTree = "<group>"; };
 		A70D73CA2B83974700D8E2EB /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
+		A70E403D2B84BA9200D2ECE0 /* Avenir.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Avenir.otf; sourceTree = "<group>"; };
 		A71CE7A82B83562F00A05D8D /* Event Building.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Event Building.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A71CE7AB2B83562F00A05D8D /* Event_BuildingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_BuildingApp.swift; sourceTree = "<group>"; };
 		A71CE7AD2B83562F00A05D8D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,7 +62,6 @@
 		A71CE7E12B835CBB00A05D8D /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		A71CE7E62B835DB800A05D8D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A71CE7E82B835DDD00A05D8D /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
-		A71FEAC72B83D72000498216 /* Avenir.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Avenir.otf; path = ../../../../Downloads/Avenir.otf; sourceTree = "<group>"; };
 		A71FEACA2B83DF4600498216 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		A7F1D2402B83F5C6000F6AD1 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		A7FC611C2B83984D000AD9C4 /* Event_BuildingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_BuildingTests.swift; sourceTree = "<group>"; };
@@ -137,6 +136,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		A70E403E2B84BA9C00D2ECE0 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A70E403D2B84BA9200D2ECE0 /* Avenir.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		A71CE79F2B83562F00A05D8D = {
 			isa = PBXGroup;
 			children = (
@@ -160,7 +167,7 @@
 		A71CE7AA2B83562F00A05D8D /* Event Building */ = {
 			isa = PBXGroup;
 			children = (
-				A71FEAC62B83D71100498216 /* Fonts */,
+				A70E403E2B84BA9C00D2ECE0 /* Font */,
 				A71CE7E52B835DA400A05D8D /* Network */,
 				A71CE7E32B835D0C00A05D8D /* Scenes */,
 				A71CE7E02B835C9300A05D8D /* Helper */,
@@ -246,14 +253,6 @@
 				A71CE7E82B835DDD00A05D8D /* APIConstants.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		A71FEAC62B83D71100498216 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				A71FEAC72B83D72000498216 /* Avenir.otf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		A71FEAC92B83DF3500498216 /* Cells */ = {
@@ -386,7 +385,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A71CE7B32B83563100A05D8D /* Preview Assets.xcassets in Resources */,
-				A71FEAC82B83D72000498216 /* Avenir.otf in Resources */,
 				A71CE7B02B83563100A05D8D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
