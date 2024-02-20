@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Event Building
+
+  Created by elmemy on 20/02/2024.
+  
+*/
+
+"EventSaved" = "Event Saved";
+"EventBuilder" = "Event Builder";
+"AddItemsMessage" = "Add items to your event to view our cost estimate.";
+"Save" = "Save";

@@ -18,18 +18,18 @@ struct CategoryDetailView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Text("Event Builder")
+            Text(AppLocalizations.localizedString("EventBuilder"))
                 .customTextStyle(size: 18, weight: .bold)
                 .multilineTextAlignment(.center)
 
-            Text("Add items to your event to view our cost estimate.")
+            Text(AppLocalizations.localizedString("AddItemsMessage"))
                 .customTextStyle(size: 16, weight: .medium)
-                .multilineTextAlignment(.center)
-                .padding(.top, 16)
-                .foregroundColor(Color(#colorLiteral(red: 0.45490196347236633, green: 0.45490196347236633, blue: 0.45490196347236633, alpha: 1)))
+                 .multilineTextAlignment(.center)
+                 .padding(.top, 16)
+                .foregroundColor(AppColors.secondary)
 
             Text(displayedAverageCost)
-                .font(.custom("Avenir", size: 37))
+                .font(.custom(AppFonts.avenir, size: 37))
                 .fontWeight(.bold)
                 .lineSpacing(51)
                 .kerning(0)
@@ -52,7 +52,7 @@ struct CategoryDetailView: View {
             Spacer()
 
             NavigationLink(destination: ResultView(viewModel: viewModel)) {
-                CustomButton(title: "Save")
+                CustomButton(title: AppLocalizations.localizedString("Save"))
             }
             .onAppear {
                 Task {

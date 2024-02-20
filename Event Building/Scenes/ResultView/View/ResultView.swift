@@ -17,8 +17,8 @@ struct ResultView: View {
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
-                Text("Event Saved")
-                    .font(.custom("Avenir", size: 20))
+                Text(AppLocalizations.localizedString("EventSaved"))
+                    .font(.customFont(20, weight: .bold))
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .lineSpacing(25)
@@ -27,7 +27,7 @@ struct ResultView: View {
                     .padding(.bottom, 10)
 
                 Text(displayedAverageCost)
-                    .font(.custom("Avenir", size: 30))
+                    .font(.custom(AppFonts.avenir, size: 30))
                     .fontWeight(.bold)
                     .lineSpacing(51)
                     .kerning(0)

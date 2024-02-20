@@ -35,14 +35,13 @@ struct ItemView: View {
             }
 
             Text(item.title)
-                .font(.custom("Avenir", size: 14))
-                .fontWeight(.semibold)
-                .foregroundColor(Color(#colorLiteral(red: 0.45490196347236633, green: 0.45490196347236633, blue: 0.45490196347236633, alpha: 1)))
+                .font(.customFont(14, weight: .semibold))
+                .foregroundColor(AppColors.secondary)
                 .lineLimit(1)
                 .padding(.bottom, 2.0)
 
             Text("$ \(String(format: "%.2f", item.minBudget)) - \(String(format: "%.2f", item.maxBudget))")
-                .font(.custom("Avenir", size: 14))
+                .font(.custom(AppFonts.avenir, size: 14))
                 .fontWeight(.bold)
         }
         .padding(8)
