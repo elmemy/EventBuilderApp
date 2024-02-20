@@ -35,8 +35,6 @@ This repository contains the source code for the Event Building app. The app all
 
 ## Unit Tests
 
-### EventViewModelTests
-
 #### `testFetchCategoriesFailure`
 - **Description:** Tests the scenario where fetching categories from the network results in a failure.
 - **Steps:**
