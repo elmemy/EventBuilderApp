@@ -16,16 +16,10 @@ struct ContentView: View {
             VStack(spacing: 0) {
                 Spacer()
 
-                Text("EventBuilder")
-                    .font(TextStyles.title.font)
-                    .foregroundColor(TextStyles.subtitle.color)
-                    .multilineTextAlignment(.center)
+                EventTitleView()
 
-                Text("AddItemsMessage")
-                    .font(TextStyles.subtitle.font)
-                    .foregroundColor(TextStyles.subtitle.color)
-                    .multilineTextAlignment(.center)
-                    .padding(.top, 16)
+                EventDescriptionView()
+
 
                 Spacer().frame(height: 39)
 

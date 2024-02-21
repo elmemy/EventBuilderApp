@@ -18,17 +18,10 @@ struct CategoryDetailView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            Text(AppLocalizations.localizedString("EventBuilder"))
-                .font(TextStyles.title.font)
-                .multilineTextAlignment(.center)
-                .foregroundColor(TextStyles.title.color)
+            EventTitleView()
 
-            Text(AppLocalizations.localizedString("AddItemsMessage"))
-                .font(TextStyles.subtitle.font)
-                .multilineTextAlignment(.center)
-                .padding(.top, 16)
-                .foregroundColor(TextStyles.subtitle.color)
-
+            EventDescriptionView()
+            
             Text(displayedAverageCost)
                 .font(TextStyles.body.font)
                 .fontWeight(.bold)

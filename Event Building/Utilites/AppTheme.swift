@@ -34,9 +34,9 @@ enum TextStyles {
     var color: Color {
         switch self {
         case .title:
-            return AppColors.primary
+            return Color.black
         case .subtitle:
-            return AppColors.secondary
+            return Color.black
         case .body:
             return AppColors.secondary
         case .bodyWhite:
