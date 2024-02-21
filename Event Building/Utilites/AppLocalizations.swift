@@ -5,6 +5,8 @@
 //  Created by elmemy on 20/02/2024.
 //
 
+// AppLocalizations.swift
+
 import Foundation
 
 struct AppLocalizations {

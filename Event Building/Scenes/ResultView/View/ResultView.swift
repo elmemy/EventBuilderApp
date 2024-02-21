@@ -5,8 +5,6 @@
 //  Created by elmemy on 19/02/2024.
 //
 import SwiftUI
-
-// View for displaying the result of saving an event
 struct ResultView: View {
     @ObservedObject var viewModel: EventViewModel
     @State private var displayedAverageCost: String = "0.00 - 0.00"
@@ -18,26 +16,29 @@ struct ResultView: View {
 
             VStack {
                 Text(AppLocalizations.localizedString("EventSaved"))
-                    .font(.customFont(20, weight: .bold))
+                    .font(TextStyles.title.font)
                     .fontWeight(.bold)
                     .multilineTextAlignment(.center)
                     .lineSpacing(25)
                     .kerning(0)
                     .padding(.top, 62)
                     .padding(.bottom, 10)
+                    .foregroundColor(TextStyles.title.color)
 
                 Text(displayedAverageCost)
-                    .font(.custom(AppFonts.avenir, size: 30))
+                    .font(TextStyles.body.font)
                     .fontWeight(.bold)
                     .lineSpacing(51)
                     .kerning(0)
                     .multilineTextAlignment(.center)
+                    .foregroundColor(TextStyles.body.color)
                     .onReceive(viewModel.$averageCost) { newAverageCost in
                         displayedAverageCost = newAverageCost
                     }
 
                 Image(systemName: "star.fill")
                     .font(.system(size: 20))
+                    .foregroundColor(TextStyles.title.color)
             }
             .padding()
             .frame(width: 350, height: 350)

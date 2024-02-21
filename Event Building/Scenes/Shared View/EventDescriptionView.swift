@@ -11,9 +11,9 @@ import SwiftUI
 struct EventDescriptionView: View {
     var body: some View {
         Text(AppLocalizations.localizedString("AddItemsMessage"))
-            .customTextStyle(size: 16, weight: .medium)
+            .font(TextStyles.subtitle.font)
+            .foregroundColor(TextStyles.subtitle.color)
             .multilineTextAlignment(.center)
             .padding(.vertical, 16)
-            .foregroundColor(AppColors.secondary)
     }
 }

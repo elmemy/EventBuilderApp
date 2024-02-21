@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+
 // View for displaying event categories
 struct EventCategoriesView: View {
     @ObservedObject var viewModel: EventViewModel
@@ -22,4 +23,3 @@ struct EventCategoriesView: View {
         }
     }
 }
-

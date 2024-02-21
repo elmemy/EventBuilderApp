@@ -5,6 +5,7 @@
 //
 
 // View for displaying an event item
+
 import SwiftUI
 
 struct ItemView: View {
@@ -21,6 +22,7 @@ struct ItemView: View {
                         .resizable()
                         .frame(width: 20, height: 20)
                         .padding(5)
+                        .foregroundColor(TextStyles.title.color)
                 } else {
                     Button(action: {
                         viewModel.addItem(item)
@@ -29,20 +31,22 @@ struct ItemView: View {
                             .resizable()
                             .frame(width: 20, height: 20)
                             .padding(5)
+                            .foregroundColor(TextStyles.title.color)
                     }
                     .disabled(viewModel.addedItems.contains(where: { $0.id == item.id }))
                 }
             }
 
             Text(item.title)
-                .font(.customFont(14, weight: .semibold))
-                .foregroundColor(AppColors.secondary)
+                .font(TextStyles.subtitle.font)
+                .foregroundColor(TextStyles.subtitle.color)
                 .lineLimit(1)
                 .padding(.bottom, 2.0)
 
             Text("$ \(String(format: "%.2f", item.minBudget)) - \(String(format: "%.2f", item.maxBudget))")
-                .font(.custom(AppFonts.avenir, size: 14))
+                .font(TextStyles.body.font)
                 .fontWeight(.bold)
+                .foregroundColor(TextStyles.body.color)
         }
         .padding(8)
         .background(Color.white)

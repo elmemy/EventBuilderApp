@@ -5,20 +5,19 @@
 //  Created by elmemy on 19/02/2024.
 
 // MARK: - Networking
+// NetworkManager.swift
+
 import Foundation
 
-// Enum to represent network-related errors
 enum NetworkError: Error {
     case requestFailed(Error)
     case decodingFailed
 }
 
-// Protocol for handling network requests
 protocol Networking {
     func fetchData<T: Decodable>(from url: URL) async throws -> T
 }
 
-// Concrete implementation of the Networking protocol
 class NetworkService: Networking {
     func fetchData<T: Decodable>(from url: URL) async throws -> T {
         do {

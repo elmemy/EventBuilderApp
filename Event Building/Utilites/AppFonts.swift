@@ -9,7 +9,7 @@
 
 import SwiftUI
 
-struct AppFonts {
+enum AppFonts {
     static let avenir = "Avenir"
 }
 

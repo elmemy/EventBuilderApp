@@ -5,7 +5,6 @@
 //  Created by elmemy on 20/02/2024.
 //
 
-
 // View extension for custom text styling
 import SwiftUI
 
@@ -14,5 +13,6 @@ extension Text {
         self
             .font(.custom(AppFonts.avenir, size: size))
             .fontWeight(weight)
+            .foregroundColor(TextStyles.body.color)
     }
 }

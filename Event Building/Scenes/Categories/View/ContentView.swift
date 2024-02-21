@@ -3,11 +3,10 @@
 //
 //  Created by elmemy on 19/02/2024.
 //
+// ContentView.swift
 
-// View for the main content
 import SwiftUI
 
-// View for the main content
 struct ContentView: View {
     @StateObject private var viewModel = EventViewModel(eventService: EventService(networking: NetworkService()))
     let gridItems = [GridItem(.flexible(), spacing: 16), GridItem(.flexible(), spacing: 16)]
@@ -17,9 +16,16 @@ struct ContentView: View {
             VStack(spacing: 0) {
                 Spacer()
 
-                EventTitleView()
+                Text("EventBuilder")
+                    .font(TextStyles.title.font)
+                    .foregroundColor(TextStyles.subtitle.color)
+                    .multilineTextAlignment(.center)
 
-                EventDescriptionView()
+                Text("AddItemsMessage")
+                    .font(TextStyles.subtitle.font)
+                    .foregroundColor(TextStyles.subtitle.color)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 16)
 
                 Spacer().frame(height: 39)
 
@@ -30,10 +36,7 @@ struct ContentView: View {
                     await viewModel.fetchCategories()
                 }
             }
+            .background(AppColors.themeBackground)
         }
     }
 }
-
-
-
-

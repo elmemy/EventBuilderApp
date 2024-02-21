@@ -9,7 +9,6 @@
 import SwiftUI
 import Combine
 
-// ViewModel for managing events
 class EventViewModel: ObservableObject {
     @Published var categories: [CategoryModel] = []
     @Published var items: [EventItem] = []

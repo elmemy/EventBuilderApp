@@ -19,21 +19,23 @@ struct CategoryDetailView: View {
     var body: some View {
         VStack(spacing: 0) {
             Text(AppLocalizations.localizedString("EventBuilder"))
-                .customTextStyle(size: 18, weight: .bold)
+                .font(TextStyles.title.font)
                 .multilineTextAlignment(.center)
+                .foregroundColor(TextStyles.title.color)
 
             Text(AppLocalizations.localizedString("AddItemsMessage"))
-                .customTextStyle(size: 16, weight: .medium)
-                 .multilineTextAlignment(.center)
-                 .padding(.top, 16)
-                .foregroundColor(AppColors.secondary)
+                .font(TextStyles.subtitle.font)
+                .multilineTextAlignment(.center)
+                .padding(.top, 16)
+                .foregroundColor(TextStyles.subtitle.color)
 
             Text(displayedAverageCost)
-                .font(.custom(AppFonts.avenir, size: 37))
+                .font(TextStyles.body.font)
                 .fontWeight(.bold)
                 .lineSpacing(51)
                 .kerning(0)
                 .multilineTextAlignment(.center)
+                .foregroundColor(TextStyles.body.color)
                 .onReceive(viewModel.$averageCost) { newAverageCost in
                     displayedAverageCost = newAverageCost
                 }
