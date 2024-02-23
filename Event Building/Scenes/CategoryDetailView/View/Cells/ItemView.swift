@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-struct ItemView: View {
+struct ItemView<ViewModel: CategoryDetailViewModelProtocol>: View {
     let item: EventItem
-    @ObservedObject var viewModel: EventViewModel
+    @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         VStack(alignment: .leading) {

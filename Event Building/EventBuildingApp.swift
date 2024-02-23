@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct Event_BuildingApp: App {
+struct EventBuildingApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CategoriesView()
         }
     }
 }

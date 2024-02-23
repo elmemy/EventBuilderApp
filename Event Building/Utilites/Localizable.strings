@@ -10,3 +10,4 @@
 "EventBuilder" = "Event Builder";
 "AddItemsMessage" = "Add items to your event to view our cost estimate.";
 "Save" = "Save";
+"Loading"="Loading Items...";

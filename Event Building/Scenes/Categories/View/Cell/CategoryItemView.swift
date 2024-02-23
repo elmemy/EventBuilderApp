@@ -3,17 +3,18 @@
 //
 //  Created by elmemy on 19/02/2024.
 //
-
 import SwiftUI
+
 // View for displaying a category item
-struct CategoryItemView: View {
+struct CategoryItemView: View  {
     let category: CategoryModel
+    var viewModel: CategoriesViewModel
 
     var body: some View {
-        NavigationLink(destination: CategoryDetailView(viewModel: EventViewModel(eventService: EventService(networking: NetworkService())), category: category)) {
+        NavigationLink(destination: CategoryDetailView(category: category)) {
             VStack(alignment: .leading) {
                 AsyncImage(url: category.image)
-
+                
                 HStack {
                     Text(category.title)
                         .font(.custom(AppFonts.avenir, size: 14))
@@ -22,7 +23,7 @@ struct CategoryItemView: View {
                         .lineLimit(1)
                         .multilineTextAlignment(.leading)
                         .padding(8)
-
+                    
                     Spacer()
                     Image(systemName: "chevron.right")
                         .foregroundColor(Color(#colorLiteral(red: 0.36470588235294116, green: 0.6392156862745098, blue: 0.6627450980392157, alpha: 1)))
