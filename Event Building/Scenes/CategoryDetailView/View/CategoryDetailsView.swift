@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct CategoryDetailView : View {
-        
-    @StateObject private var viewModel = CategoryDetailViewModel(itemsService: ItemsService(networkService: NetworkService()))
+    @EnvironmentObject private var viewModel: CategoryDetailViewModel // Inject the view model via environment
 
     let category: CategoryModel
-        
+    
     // Define gridColumns and gridSpacing
     let gridColumns = [GridItem(.flexible()), GridItem(.flexible())]
     let gridSpacing: CGFloat = 16.0
     
-    // Body
     var body: some View {
         VStack(spacing: 0) {
             // Display EventTitleView
@@ -27,13 +25,17 @@ struct CategoryDetailView : View {
             EventDescriptionView()
             
             // Display Average Cost
-            Text(viewModel.averageCost)
-                .font(TextStyles.body.font)
-                .fontWeight(.bold)
-                .lineSpacing(51)
-                .kerning(0)
-                .multilineTextAlignment(.center)
-                .foregroundColor(TextStyles.body.color)
+            Group {
+                if viewModel.loaderState == .loaded {
+                    Text(viewModel.averageCost)
+                        .font(TextStyles.body.font)
+                        .fontWeight(.bold)
+                        .lineSpacing(51)
+                        .kerning(0)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(TextStyles.body.color)
+                }
+            }
             
             // Display items based on loaderState
             Spacer()
