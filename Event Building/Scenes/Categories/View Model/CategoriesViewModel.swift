@@ -27,6 +27,7 @@ class CategoriesViewModel: ObservableObject{
     }
 
     func fetchCategories() async {
+        if (loaderState == .loaded) {return}
         loaderState = .loading
         categoriesService.fetchCategories()
             .receive(on: DispatchQueue.main)

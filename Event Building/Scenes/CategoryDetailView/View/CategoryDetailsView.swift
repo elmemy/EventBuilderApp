@@ -66,11 +66,7 @@ struct CategoryDetailView : View {
             NavigationLink(destination: ResultView(displayedAverageCost: viewModel.averageCost)) {
                 CustomButton(title: AppLocalizations.localizedString("Save"))
             }
-            .onAppear {
-                Task {
-                    await viewModel.fetchItems(for: category)
-                }
-            }
+          
         }
     }
 }
