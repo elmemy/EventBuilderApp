@@ -8,32 +8,6 @@ import Foundation
 import Combine
 import Moya
 
-// MARK: - NetworkServiceProtocol
-
-protocol NetworkServiceProtocol {
-    func fetch<T: Decodable>(_ endpoint: Endpoint) -> AnyPublisher<T, NetworkError>
-}
-
-// MARK: - NetworkError
-
-enum NetworkError: Error {
-    case connectivity
-    case invalidResponse
-    case parsingError(Error)
-    case serverError(Int, String)
-    case unknown
-}
-
-struct Endpoint {
-    let path: String
-    let method: HTTPMethod
-}
-
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-}
-
 // MARK: - NetworkService
 
 class NetworkService: NetworkServiceProtocol {

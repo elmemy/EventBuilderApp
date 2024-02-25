@@ -8,16 +8,16 @@
 import Foundation
 import Combine
 
-// MARK: - ItemsServiceProtocol
 
+// MARK: - ItemsServiceProtocol
 /// Protocol defining methods for fetching items.
 protocol ItemsServiceProtocol {
     /// Fetches items for a given category ID.
     func fetchItems(for categoryID: Int) -> AnyPublisher<[EventItem], NetworkError>
 }
 
-// MARK: - ItemsService
 
+// MARK: - ItemsService
 /// Class responsible for fetching items.
 class ItemsService: ItemsServiceProtocol {
     private let networkService: NetworkServiceProtocol

@@ -46,6 +46,12 @@
 		A7FC611D2B83984D000AD9C4 /* CategoriesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FC611C2B83984D000AD9C4 /* CategoriesViewModelTests.swift */; };
 		D07449F0B8EB755A85D1B6FE /* Pods_Event_BuildingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD0C3A4084C34A2B5A469BB /* Pods_Event_BuildingTests.framework */; };
 		DE2D430D71814EBF430093FC /* Pods_Event_Building.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A645A84B76070025B4ED17A /* Pods_Event_Building.framework */; };
+		E45ED44A2B8BEA6F00894228 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED4492B8BEA6F00894228 /* AsyncImage.swift */; };
+		E45ED44C2B8BEAB700894228 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED44B2B8BEAB700894228 /* ImageLoader.swift */; };
+		E45ED44F2B8BEB6100894228 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED44E2B8BEB6100894228 /* NetworkServiceProtocol.swift */; };
+		E45ED4532B8BEBD300894228 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED4522B8BEBD300894228 /* NetworkError.swift */; };
+		E45ED4552B8BEBF700894228 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED4542B8BEBF700894228 /* Endpoint.swift */; };
+		E45ED4582B8BEC1400894228 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45ED4572B8BEC1400894228 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +121,12 @@
 		A7F1D2402B83F5C6000F6AD1 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		A7FC611C2B83984D000AD9C4 /* CategoriesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModelTests.swift; sourceTree = "<group>"; };
 		D6CF11579DBFB2F665A3E038 /* Pods-Event BuildingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event BuildingTests.debug.xcconfig"; path = "Target Support Files/Pods-Event BuildingTests/Pods-Event BuildingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E45ED4492B8BEA6F00894228 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		E45ED44B2B8BEAB700894228 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		E45ED44E2B8BEB6100894228 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		E45ED4522B8BEBD300894228 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		E45ED4542B8BEBF700894228 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E45ED4572B8BEC1400894228 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,7 +304,7 @@
 		A71CE7E02B835C9300A05D8D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				A71CE7E12B835CBB00A05D8D /* ImageCache.swift */,
+				E45ED44D2B8BEAE200894228 /* Images */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -314,6 +326,10 @@
 				A71CE7E62B835DB800A05D8D /* NetworkService.swift */,
 				A728F21C2B8801DA0063EBC5 /* APITarget.swift */,
 				A728F2232B8805940063EBC5 /* LoaderState.swift */,
+				E45ED44E2B8BEB6100894228 /* NetworkServiceProtocol.swift */,
+				E45ED4522B8BEBD300894228 /* NetworkError.swift */,
+				E45ED4542B8BEBF700894228 /* Endpoint.swift */,
+				E45ED4572B8BEC1400894228 /* HTTPMethod.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -438,6 +454,16 @@
 				0B8800191C9F2D7D8D9EFDA0 /* Pods-Event BuildingTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E45ED44D2B8BEAE200894228 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A71CE7E12B835CBB00A05D8D /* ImageCache.swift */,
+				E45ED4492B8BEA6F00894228 /* AsyncImage.swift */,
+				E45ED44B2B8BEAB700894228 /* ImageLoader.swift */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -680,8 +706,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45ED44A2B8BEA6F00894228 /* AsyncImage.swift in Sources */,
+				E45ED4532B8BEBD300894228 /* NetworkError.swift in Sources */,
 				A71CE7D92B8356F200A05D8D /* EventItem.swift in Sources */,
 				A7D933ED2B8693020059B308 /* AppTheme.swift in Sources */,
+				E45ED44C2B8BEAB700894228 /* ImageLoader.swift in Sources */,
 				A728F2292B880A7B0063EBC5 /* CategoriesViewModelProtocol.swift in Sources */,
 				A71D54612B84F6DF0021A6E7 /* EventDescriptionView.swift in Sources */,
 				A71D545C2B84F2F90021A6E7 /* AppLocalizations.swift in Sources */,
@@ -689,9 +718,11 @@
 				A71CE7AC2B83562F00A05D8D /* EventBuildingApp.swift in Sources */,
 				A728F22B2B880A970063EBC5 /* CategoryDetailViewModelProtocol.swift in Sources */,
 				A71CE7DC2B83573600A05D8D /* CategoriesViewModel.swift in Sources */,
+				E45ED4582B8BEC1400894228 /* HTTPMethod.swift in Sources */,
 				A7F1D2412B83F5C6000F6AD1 /* ResultView.swift in Sources */,
 				A71D54692B84F7780021A6E7 /* customTextStyle.swift in Sources */,
 				A71FEACB2B83DF4600498216 /* ItemView.swift in Sources */,
+				E45ED44F2B8BEB6100894228 /* NetworkServiceProtocol.swift in Sources */,
 				A70D73CB2B83974700D8E2EB /* CategoryDetailsView.swift in Sources */,
 				A71D54672B84F7470021A6E7 /* CustomButton.swift in Sources */,
 				A71D545A2B84F2DF0021A6E7 /* AppColors.swift in Sources */,
@@ -706,6 +737,7 @@
 				A728F2242B8805940063EBC5 /* LoaderState.swift in Sources */,
 				A728F2202B8802490063EBC5 /* CategoriesService.swift in Sources */,
 				A71D54642B84F7260021A6E7 /* EventCategoriesView.swift in Sources */,
+				E45ED4552B8BEBF700894228 /* Endpoint.swift in Sources */,
 				A728F21D2B8801DA0063EBC5 /* APITarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
