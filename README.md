@@ -1,6 +1,3 @@
-Certainly! Here's how you might explain the code in a README file:
-
----
 
 # Event Building App
 
