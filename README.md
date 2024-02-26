@@ -65,10 +65,6 @@ By following these SOLID principles, the project maintains a clean, modular, and
 
 --- 
 
-Certainly! Here's how you can explain dependency injection in the README file:
-
----
-
 ### Dependency Injection
 
 Dependency injection is a design pattern used in the project to enhance flexibility, modularity, and testability by decoupling components and their dependencies. In this project:
