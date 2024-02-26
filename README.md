@@ -46,3 +46,24 @@ The project uses the following dependencies:
 - **Moya**: A network abstraction layer built on top of Alamofire for easier network request handling.
 - **Combine**: A framework for processing values over time, used for asynchronous programming and handling data streams.
 
+This set of test cases verifies the behavior of the view models (`CategoriesViewModel` and `CategoryDetailViewModel`) under different conditions:
+
+### `CategoriesViewModelTests`
+
+1. **`testFetchCategories_Success`**: This test ensures that the `CategoriesViewModel` correctly handles the scenario where categories are successfully fetched from the service. It sets up a mock `CategoriesService` to return a successful result with expected categories. After calling `fetchCategories()`, it verifies that the loader state transitions from `.loading` to `.loaded`, and that the fetched categories match the expected categories.
+
+2. **`testFetchCategories_Failure`**: This test verifies the behavior of the `CategoriesViewModel` when category fetching fails. It configures the mock `CategoriesService` to return a failure result with an expected error. After calling `fetchCategories()`, it checks that the loader state transitions to `.error`, and that the fetched categories remain `nil`.
+
+### `CategoryDetailViewModelTests`
+
+1. **`testFetchItems_Success`**: Similar to the `CategoriesViewModel` test, this test checks the behavior of the `CategoryDetailViewModel` when items are successfully fetched. It sets up a mock `ItemsService` to return expected items for a given category. After calling `fetchItems(for:)`, it waits for the asynchronous operation to complete and verifies that the loader state transitions to `.loaded` and that the fetched items match the expected items.
+
+2. **`testFetchItems_Failure`**: This test ensures that the `CategoryDetailViewModel` handles item fetching failures correctly. It configures the mock `ItemsService` to return a failure result with an expected error. After calling `fetchItems(for:)`, it waits for the asynchronous operation to complete and checks that the loader state transitions to `.error` and that the items remain empty with an average cost of "0.00 - 0.00".
+
+### Mock Objects
+
+- **`CategoriesServiceProtocolMock`**: This mock object implements the `CategoriesServiceProtocol` and allows controlling the behavior of category fetching for testing purposes. It tracks the number of times `fetchCategories()` is called and returns a customizable result.
+  
+- **`ItemsServiceProtocolMock`**: Similarly, this mock object implements the `ItemsServiceProtocol` and allows controlling the behavior of item fetching. It returns a customizable result for testing.
+
+These tests ensure that the view models respond appropriately to different outcomes of data fetching operations, such as success and failure, and handle the loading states correctly. They help ensure the reliability and correctness of the application's behavior.
