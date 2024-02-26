@@ -1,70 +1,51 @@
-# EventBuilderApp
+Certainly! Here's how you might explain the code in a README file:
 
-# Event Builder App
+---
 
-This repository contains the source code for an iOS application named "Event Builder." The app is designed to help users plan and estimate the cost of organizing events by providing a categorized list of items along with their respective budgets. Users can add items to their event, view the estimated cost, and save the event for future reference.
+# Event Building App
 
-## Networking
+This repository contains the source code for an Event Building application built in Swift. The application follows best practices in software engineering, including adherence to SOLID principles, separation of concerns, dependency injection, and modular architecture.
 
-The networking functionality is encapsulated in the `NetworkLayer` struct, which conforms to the `Networking` protocol. The app uses asynchronous Swift functions to fetch data from a remote API. The `APIConstants` struct holds the base URL and provides methods to generate specific URLs for fetching categories and items.
+## Overview
 
-## Models
+The Event Building app is designed to facilitate the organization of events by providing features for managing categories and items within those categories. Users can view categories, fetch items associated with each category, and add items to their event planning list.
 
-The app defines two main models:
-- `CategoryModel`: Represents a category with an identifier, title, and image.
-- `EventItem`: Represents an event item with an identifier, title, minimum budget, maximum budget, average budget, image, and an optional flag indicating whether the item has been added to the event.
+## Key Components
 
-## ViewModels
+### Network Layer
 
-The `EventViewModel` class is responsible for managing the application's data flow and business logic. It utilizes Combine to handle asynchronous tasks and provides methods for fetching categories and items, adding items to the event, and calculating average costs.
+The network layer is responsible for handling network requests. It includes a `NetworkService` class that abstracts away the details of making HTTP requests using URLSession and Moya. This layer ensures a consistent interface for performing network operations across the application.
 
-## Views
+### Domain Layer
 
-The app includes several SwiftUI views for presenting the user interface:
-- `ContentView`: The main view displaying the app's title, description, and a list of event categories.
-- `CategoryItemView`: Represents a category item in the category list.
-- `EventCategoriesView`: Displays a scrollable grid of event categories.
-- `ItemView`: Represents an event item with an image, title, and budget range.
-- `CategoryDetailView`: Displays details of a specific category, including the average cost and a list of items.
-- `ResultView`: Shown after saving an event, providing feedback on a successful event save along with the average cost.
+The domain layer contains the business logic of the application. It includes services for fetching categories and items from the network. The `CategoriesService` and `ItemsService` classes implement protocols (`CategoriesServiceProtocol` and `ItemsServiceProtocol`, respectively) to provide a clear contract for fetching data.
 
+### Presentation Layer
 
+The presentation layer handles user interaction and display logic. It includes view models (`CategoriesViewModel` and `CategoryDetailViewModel`) that expose data and state for use by the user interface. These view models interact with the domain layer to fetch data and update the UI accordingly.
 
-## Unit Tests
+## SOLID Principles
 
-#### `testFetchCategoriesFailure`
-- **Description:** Tests the scenario where fetching categories from the network results in a failure.
-- **Steps:**
-  1. Set up a mock networking class (`MockNetworking`) to simulate network responses.
-  2. Configure the mock to return a failure result with a predefined error.
-  3. Invoke the `fetchCategories` method on the `EventViewModel` asynchronously.
-  4. Assert that the `categories` array in the view model is empty after the operation.
+The codebase adheres to SOLID principles:
 
-#### `testAddItem`
-- **Description:** Tests the addition of an item to the `EventViewModel`.
-- **Steps:**
-  1. Create an instance of `EventItem`.
-  2. Invoke the `addItem` method on the `EventViewModel` with the created item.
-  3. Assert that the added item is present in the `addedItems` array of the view model.
+- **Single Responsibility Principle**: Each class has a single responsibility, such as fetching categories or managing item data.
+- **Open/Closed Principle**: Classes are open for extension but closed for modification, allowing for easy addition of new features without modifying existing code.
+- **Liskov Substitution Principle**: Subtypes can be substituted for their base types, enabling polymorphic behavior and flexibility.
+- **Interface Segregation Principle**: Interfaces are segregated to define specific contracts, promoting loose coupling and modularity.
+- **Dependency Inversion Principle**: High-level modules depend on abstractions, not concrete implementations, facilitating easier testing and flexibility.
 
-### MockNetworking
-- **Description:** A mock implementation of the `Networking` protocol for testing purposes.
-- **Properties:**
-  - `fetchDataResult`: Result to be returned when `fetchData` is called.
-- **Methods:**
-  - `fetchData<T: Decodable>(from url: URL) async throws -> T`: Simulates fetching data from the network.
+## Getting Started
 
-## How to Run Tests
+To run the Event Building app:
 
-To run the unit tests, follow these steps:
-
-1. Open the Xcode project for the Event Building app.
-2. Navigate to the `Event BuildingTests` target.
-3. Press `Cmd + U` or choose "Product" > "Test" from the Xcode menu.
-
+1. Clone this repository to your local machine.
+2. Open the project in Xcode.
+3. Build and run the app on a simulator or device.
 
 ## Dependencies
 
-The app relies on Combine for reactive programming and SwiftUI for building the user interface. The networking layer utilizes the `URLSession` for asynchronous data fetching, and the `JSONDecoder` for decoding JSON responses.
+The project uses the following dependencies:
 
-Feel free to explore, modify, and build upon this codebase for your event planning application. If you encounter any issues or have suggestions, please don't hesitate to reach out or contribute to the repository. Happy coding!
+- **Moya**: A network abstraction layer built on top of Alamofire for easier network request handling.
+- **Combine**: A framework for processing values over time, used for asynchronous programming and handling data streams.
+
