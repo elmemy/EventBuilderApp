@@ -31,6 +31,50 @@ The codebase adheres to SOLID principles:
 - **Interface Segregation Principle**: Interfaces are segregated to define specific contracts, promoting loose coupling and modularity.
 - **Dependency Inversion Principle**: High-level modules depend on abstractions, not concrete implementations, facilitating easier testing and flexibility.
 
+
+// Single Responsibility Principle (SRP): Each class has a single responsibility.
+
+// Example:
+// The CategoriesService class is responsible for fetching categories from the network.
+class CategoriesService {
+    // Fetches categories from the network.
+    func fetchCategories() { ... }
+}
+
+// Open/Closed Principle (OCP): Classes are open for extension but closed for modification.
+
+// Example:
+// The ViewModel class is open for extension through subclassing or protocol conformance.
+// Adding new features can be achieved without modifying the existing ViewModel class.
+class ViewModel {
+    // Common properties and methods.
+}
+
+// Liskov Substitution Principle (LSP): Subtypes can be substituted for their base types.
+
+// Example:
+// Any subclass of the Category class can be used interchangeably with the base Category class.
+class Category { ... }
+
+// Interface Segregation Principle (ISP): Interfaces are segregated to define specific contracts.
+
+// Example:
+// The CategoriesServiceProtocol defines a specific contract for fetching categories.
+protocol CategoriesServiceProtocol {
+    func fetchCategories()
+}
+
+// Dependency Inversion Principle (DIP): High-level modules depend on abstractions, not concrete implementations.
+
+// Example:
+// The ViewModel class depends on the CategoriesServiceProtocol abstraction rather than a concrete CategoriesService implementation.
+class ViewModel {
+    let service: CategoriesServiceProtocol
+    init(service: CategoriesServiceProtocol) {
+        self.service = service
+    }
+}
+
 ## Getting Started
 
 To run the Event Building app:
