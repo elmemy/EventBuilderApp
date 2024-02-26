@@ -127,6 +127,12 @@
 		E45ED4522B8BEBD300894228 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E45ED4542B8BEBF700894228 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E45ED4572B8BEC1400894228 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		E45ED4592B8C852A00894228 /* Network Layer README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Network Layer README.md"; sourceTree = "<group>"; };
+		E45ED45A2B8C85A300894228 /* Domain Layer README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Domain Layer README.md"; sourceTree = "<group>"; };
+		E45ED45B2B8C860000894228 /* Presentation Layer README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Presentation Layer README.md"; sourceTree = "<group>"; };
+		E45ED45F2B8C865F00894228 /* SOLID Principles README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "SOLID Principles README.md"; sourceTree = "<group>"; };
+		E45ED4602B8C86A500894228 /* Dependency Injection README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Dependency Injection README.md"; sourceTree = "<group>"; };
+		E45ED4612B8C86D300894228 /* Unit Tests README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Unit Tests README.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +241,7 @@
 		A71CE7AA2B83562F00A05D8D /* Event Building */ = {
 			isa = PBXGroup;
 			children = (
+				E45ED45C2B8C863F00894228 /* Solid */,
 				A728F21E2B88023B0063EBC5 /* Domain */,
 				A71D54582B84F2C40021A6E7 /* Utilites */,
 				A70E403E2B84BA9C00D2ECE0 /* Font */,
@@ -259,6 +266,7 @@
 		A71CE7BB2B83563100A05D8D /* Event BuildingTests */ = {
 			isa = PBXGroup;
 			children = (
+				E45ED4612B8C86D300894228 /* Unit Tests README.md */,
 				A728F2302B88DBD40063EBC5 /* CategoryDetailTest */,
 				A728F22C2B88D6A80063EBC5 /* CategoriesTest */,
 			);
@@ -312,6 +320,7 @@
 		A71CE7E32B835D0C00A05D8D /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E45ED45B2B8C860000894228 /* Presentation Layer README.md */,
 				A71D545D2B84F6A00021A6E7 /* Shared View */,
 				A70D73C52B8380BA00D8E2EB /* Categories */,
 				A70D73C62B8380CE00D8E2EB /* CategoryDetailView */,
@@ -323,6 +332,7 @@
 		A71CE7E52B835DA400A05D8D /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E45ED4592B8C852A00894228 /* Network Layer README.md */,
 				A71CE7E62B835DB800A05D8D /* NetworkService.swift */,
 				A728F21C2B8801DA0063EBC5 /* APITarget.swift */,
 				A728F2232B8805940063EBC5 /* LoaderState.swift */,
@@ -368,6 +378,7 @@
 		A728F21E2B88023B0063EBC5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				E45ED45A2B8C85A300894228 /* Domain Layer README.md */,
 				A728F21F2B8802490063EBC5 /* CategoriesService.swift */,
 				A728F2212B8802620063EBC5 /* ItemsService.swift */,
 			);
@@ -464,6 +475,15 @@
 				E45ED44B2B8BEAB700894228 /* ImageLoader.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		E45ED45C2B8C863F00894228 /* Solid */ = {
+			isa = PBXGroup;
+			children = (
+				E45ED45F2B8C865F00894228 /* SOLID Principles README.md */,
+				E45ED4602B8C86A500894228 /* Dependency Injection README.md */,
+			);
+			path = Solid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
